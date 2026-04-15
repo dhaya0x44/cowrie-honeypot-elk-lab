@@ -12,15 +12,14 @@ The objective is to simulate attacker behavior, capture malicious activity, and 
 <p align="center">
   <img src="screenshots/architecture-diagram.png" width="700"/>
 </p>
-Kali Linux (Attacker)  
-        ↓  
-Cowrie Honeypot (Raspberry Pi)  
-        ↓  
-Filebeat (Log Shipper)  
-        ↓  
-Elasticsearch (Storage & Indexing)  
-        ↓  
-Kibana (Visualization & Analysis)
+
+### 🔄 Data Flow
+
+- **Kali Linux (Attacker)** → Launches SSH attacks  
+- **Cowrie Honeypot (Raspberry Pi)** → Captures attacker interaction  
+- **Filebeat (Log Shipper)** → Ships logs to Elasticsearch  
+- **Elasticsearch (Storage & Indexing)** → Stores and indexes logs  
+- **Kibana (Visualization & Analysis)** → Enables log analysis and detection
 
 ---
 
