@@ -50,25 +50,81 @@ Kibana (Visualization & Analysis)
 
 ---
 
-## 📊 Detection & Log Analysis (Kibana)
+## 🧠 Detection Engineering
 
-Logs were ingested into Elasticsearch using Filebeat and visualized in Kibana.
+This project includes detection logic built using Kibana Query Language (KQL) to identify malicious SSH activity captured by the Cowrie honeypot.
 
-### Key Detections
+---
 
-- **Brute Force Activity**
-  - Multiple login attempts detected from single IP
-  - Identified via repeated authentication events
+### 🔐 Detection 1: SSH Brute Force Attack
 
-- **Successful Login Detection**
-  - Detection of valid credential usage
-  - Logged username and password combinations
+**Description:**  
+Identifies multiple authentication attempts (failed and successful) indicating brute-force activity.
 
-- **Command Execution Monitoring**
-  - Tracking attacker commands via:
+**KQL Query:**
+
+    ```
+    eventid: "cowrie.login.failed"
+    ```
+**Detection Logic:**
+- High volume of login attempts from a single IP
+- Multiple failed attempts followed by a success
+- Repeated credential guessing patterns
+
+**MITRE ATT&CK Mapping:**
+- T1110 – Brute Force
+
+---
+
+### 🧾 Detection 2: Command Execution Activity
+
+**Description:**  
+Detects commands executed by attackers after gaining access to the honeypot.
+
+**KQL Query:**
+
     ```
     eventid: "cowrie.command.input"
     ```
+**Detection Logic:**
+- Execution of reconnaissance commands:
+  - whoami
+  - uname -a
+  - cat /etc/passwd
+- Indicates post-compromise activity
+
+**MITRE ATT&CK Mapping:**
+- T1059 – Command and Scripting Interpreter
+
+---
+
+### 🌐 Detection 3: Attacker IP Tracking
+
+**Description:**  
+Identifies and correlates attacker activity based on source IP.
+
+**KQL Query:**
+
+    ```
+    eventid: "src_ip:*"
+    ```
+**Detection Logic:**
+- Repeated activity from same IP
+- Correlation between login attempts and command execution
+- Helps in attacker profiling
+
+---
+
+## 🚨 Detection Summary
+
+The following attack behaviors were successfully detected:
+
+- SSH brute-force attempts using Hydra
+- Unauthorized login attempts
+- Post-authentication command execution
+- Attacker source tracking and activity correlation
+
+This demonstrates practical detection engineering using centralized logging and analysis with the ELK Stack.
 
 ---
 
@@ -125,21 +181,29 @@ eventid: "cowrie.command.input"
 
 ---
 
-## 📸 Screenshots
+## 📸 Attack Demonstration
 
-- Hydra brute force execution (Kali)
+### 🔐 Hydra Brute Force Attack
 ![Hydra Attack](screenshots/screenshots-attack-hydra.png)
+
+---
   
-- Cowrie logs capturing login attempts
+### 🐝 Cowrie Logs - Login Attempts
 ![Cowrie Logs](screenshots/screenshots-cowrie-logs.png)
+
+---
   
-- Kibana Discover view with login events
+### 📊 Kibana - Login Events
 ![Kibana Login](screenshots/screenshots-kibana-login.png)
+
+---
   
-- Command execution logs (`whoami`, `uname -a`)
+### 🧾 Command Execution Activity
 ![Command Execution](screenshots/screenshots-command-execution.png)
- 
-- Attacker Command Activity (Kibana)
+
+---
+
+### 📊 Kibana - Attacker Commands
 ![Kibana Commands](screenshots/screenshots-kibana-commands.png)
 
 ---
