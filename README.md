@@ -9,6 +9,9 @@ The objective is to simulate attacker behavior, capture malicious activity, and 
 
 ## ⚙️ Architecture
 
+<p align="center">
+  <img src="screenshots/architecture-diagram.png" width="700"/>
+</p>
 Kali Linux (Attacker)  
         ↓  
 Cowrie Honeypot (Raspberry Pi)  
