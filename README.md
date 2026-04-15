@@ -239,8 +239,28 @@ to track interactive session activity.
 
 ---
 
+## 💼 Professional Relevance
+
+This project aligns with real-world cybersecurity roles and demonstrates practical experience in:
+
+- Detection Engineering and log-based threat identification  
+- Threat Hunting using attacker behavior patterns  
+- Security Monitoring within SOC environments  
+- Log ingestion, parsing, and analysis using the ELK Stack  
+
+It showcases the ability to simulate attacks, generate telemetry, and build meaningful detections — skills directly applicable to SOC Analyst and Detection Engineering roles.
+
+---
+
 ## 📌 Conclusion
 
-This project showcases hands-on skills in detection engineering, log analysis, and adversary simulation.  
-It reflects real-world SOC operations and demonstrates the ability to detect, analyze, and interpret attacker behavior using industry-standard tools.
+This project demonstrates the end-to-end workflow of modern security operations — from adversary simulation to detection and analysis.
+
+It highlights the ability to:
+- Generate realistic attack scenarios  
+- Capture and centralize security logs  
+- Analyze attacker behavior and command activity  
+- Build detection logic using industry-standard tools  
+
+Overall, it reflects a strong foundation in practical cybersecurity operations and a readiness to contribute in detection-focused roles.
 
