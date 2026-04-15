@@ -128,14 +128,19 @@ eventid: "cowrie.command.input"
 ## 📸 Screenshots
 
 - Hydra brute force execution (Kali)
+![Hydra Attack](screenshots/screenshots-attack-hydra.png)
   
 - Cowrie logs capturing login attempts
+![Cowrie Logs](screenshots/screenshots-cowrie-logs.png)
   
 - Kibana Discover view with login events
+![Kibana Login](screenshots/screenshots-kibana-login.png)
   
 - Command execution logs (`whoami`, `uname -a`)
-  
+![Command Execution](screenshots/screenshots-command-execution.png)
+ 
 - Attacker Command Activity (Kibana)
+![Kibana Commands](screenshots/screenshots-kibana-commands.png)
 
 ---
 
