@@ -22,9 +22,6 @@ Elasticsearch (Storage & Indexing)
         ↓  
 Kibana (Visualization & Analysis)
 
-📐 Architecture Diagram
-![Architecture Diagram](screenshots/architecture-diagram.png)
-
 ---
 
 ## 🧪 Attack Scenarios
