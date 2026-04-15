@@ -185,28 +185,57 @@ eventid: "cowrie.command.input"
 
 ## 📸 Attack Demonstration
 
-### 🔐 Hydra Brute Force Attack
-![Hydra Attack](screenshots/screenshots-attack-hydra.png)
+### 🔐 SSH Brute Force Attack (Hydra)
 
----
-  
-### 🐝 Cowrie Logs - Login Attempts
-![Cowrie Logs](screenshots/screenshots-cowrie-logs.png)
+<p align="center">
+  <img src="screenshots/screenshots-attack-hydra.png" width="700"/>
+</p>
 
----
-  
-### 📊 Kibana - Login Events
-![Kibana Login](screenshots/screenshots-kibana-login.png)
-
----
-  
-### 🧾 Command Execution Activity
-![Command Execution](screenshots/screenshots-command-execution.png)
+Simulated a brute force attack using Hydra from Kali Linux targeting the Cowrie SSH honeypot.  
+Captured multiple authentication attempts including successful credential compromise.
 
 ---
 
-### 📊 Kibana - Attacker Commands
-![Kibana Commands](screenshots/screenshots-kibana-commands.png)
+### 🐝 Cowrie Logs – Authentication Events
+
+<p align="center">
+  <img src="screenshots/screenshots-cowrie-logs.png" width="700"/>
+</p>
+
+Honeypot logs showing detailed attacker activity including login attempts, session creation, and metadata such as source IP and credentials used.
+
+---
+
+### 📊 Kibana – Login Event Analysis
+
+<p align="center">
+  <img src="screenshots/screenshots-kibana-login.png" width="700"/>
+</p>
+
+Visualization of authentication events in Kibana using KQL filters to identify brute force patterns and successful logins.
+
+---
+
+### 🧾 Command Execution Monitoring
+
+<p align="center">
+  <img src="screenshots/screenshots-command-execution.png" width="700"/>
+</p>
+
+Captured attacker commands executed post-compromise such as:
+`whoami`, `pwd`, `uname -a`, and `/etc/passwd` enumeration.
+
+---
+
+### 📊 Kibana – Attacker Command Activity
+
+<p align="center">
+  <img src="screenshots/screenshots-kibana-commands.png" width="700"/>
+</p>
+
+Analyzed attacker behavior through command execution logs using:
+`message: "wget" OR " message: "curl"`  
+to track interactive session activity.
 
 ---
 
